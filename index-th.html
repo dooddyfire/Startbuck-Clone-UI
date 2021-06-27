@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<body>
+
+    
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#" ><img class="logo" src="img/logo.png" alt="Starbuck Logo"></a>
+       
+            <ul class="navigation">
+                <li><a href="#" class=nav-menu><h4>Home</h4></a></li>
+                <li><a href="#"  class=nav-menu><h4>Menu</h4></a></li>
+                <li><a href="#"  class=nav-menu><h4>What's New</h4></a></li>
+                <li><a href="https://m.facebook.com/home.php?_rdr"  class=nav-menu><h4>Contact</h4></a></li>
+                <li><a href="/index.html"  class=nav-menu><img src="img/us.png"><span style="font-weight:bold;"> English</span></a></li>
+
+            </ul>
+
+
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>It's not just Coffee<br>It's<span> Starbuck</span></h2>
+                <br>
+                <p style="font-family: Prompt,sans-serif;font-size:18px;">
+                    นับตั้งแต่ปี 1971 คุณภาพคือสิ่งที่เรายึดมั่นเสมอมา และจะยึดมั่นเสมอไป เรามุ่งเน้นในการสรรหาและรับซื้อเฉพาะเมล็ดกาแฟที่มีคุณภาพดีที่สุด ในราคาที่เป็นธรรม และคั่วกาแฟด้วยความเอาใจใส่ และพิถีพิถัน หากจะเทียบความหลงใหลในกาแฟของเรา ก็คงเปรียบเสมือนความรักที่พร้อมจะแบ่งปันกาแฟนั้นให้กับคุณ
+                </p>
+                <a  class="link" href="#">ข้อมูลเพิ่มเติม  <span class="someicon"><i class="fa fa-chevron-right"></i></span></a>
+            </div>
+
+            <div class="imgBox">
+                <img src="img/img1.png" class="starbucks" alt="">
+            </div>
+            
+
+        </div>
+
+        <ul class="thumb">
+            <li><img src="img/thumb1.png" alt="" class="button1" onclick="changeCircleColor('#017143');"></li>
+            <li><img src="img/thumb2.png" alt="" class="button2" onclick="changeCircleColor('#eb7495');"></li>
+            <li><img src="img/thumb3.png" alt="" class="button3" onclick="changeCircleColor('#d752b1');"></li>
+            <li><img src="img/img5.png" alt="" class="button4" onclick="changeCircleColor('#8A502B')"></li>
+            
+
+        </ul>
+            <ul class="sci">
+                <li><a href="https://www.facebook.com/kevin.angas/"><img src="img/facebook.png" alt=""></a></li>
+                <li><a href="#"><img src="img/twitter.png" alt=""></a></li>
+                <li><a href="#"><img src="img/instagram.png" alt=""></a></li>
+
+            </ul>
+
+
+    </section>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function toggleMenu(){
+    var menuToggle = document.querySelector(".toggle");
+    var navigation = document.querySelector('.navigation');
+    menuToggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+};
+
+    /* ============================ Fade in - Fade out ===================================== */
+    $('.button1').on({
+        'click': function(){
+            $(".starbucks").fadeOut("slow", function() {
+                $('.starbucks').attr('src', 'img/img1.png'); // อาจจะ error เพราะลืมใส่นามสกุลภาพ มันก็จะไม่มา
+                $(".starbucks").fadeIn("slow");
+            });             
+        }
+    });
+
+    $('.button2').on({
+        'click': function(){
+            $(".starbucks").fadeOut("slow", function() {
+                $('.starbucks').attr('src', 'img/img2.png');
+                $(".starbucks").fadeIn("slow");
+                
+            });             
+        }
+    });
+
+    $('.button3').on({
+        'click': function(){
+            $(".starbucks").fadeOut("slow", function() {
+                $('.starbucks').attr('src', 'img/img3.png');
+                $(".starbucks").fadeIn("slow");
+            });             
+        }
+    });
+
+    $('.button4').on({
+        'click': function(){
+            $(".starbucks").fadeOut("slow", function() {
+                $('.starbucks').attr('src', 'img/img5.png');
+                $(".starbucks").fadeIn("slow");
+            });             
+        }
+    });
+
+    function imgSlider(anything){
+
+        document.querySelector('.starbucks').src = anything;
+
+    }
+
+    function changeCircleColor(color){
+        const circle = document.querySelector('.circle'); 
+        circle.style.backgroundColor  = color;
+    }
+</script>
+<script>
+    function initFreshChat() {
+      window.fcWidget.init({
+        token: "6bb376f4-9f19-40cd-a975-ea78fcddb534",
+        host: "https://wchat.freshchat.com"
+      });
+    }
+    function initialize(i,t){var e;i.getElementById(t)?initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://wchat.freshchat.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))}function initiateCall(){initialize(document,"freshchat-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+  </script>
+  
+</html>
